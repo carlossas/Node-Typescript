@@ -40,6 +40,8 @@ export default class Server {
         this.bodyParser();
         //INICIAR EL SERVICIO DE SOCKET
         this.escucharSockets();
+        //CONTENIDO HTML
+        this.publicFolder();
     }
 
     //RETORNA LA INSTANCIA DE LA CLASE O CREA UNA NUEVA SI NO EXISTE
@@ -50,7 +52,7 @@ export default class Server {
     //ESCUCHAR SOCKETS
     private escucharSockets(){
         console.log("escuchando conexiones");
-        this.io.on('connection', cliente =>{
+        this.io.on('connection', (cliente: any) =>{
 
             console.log("conectado a socket");
               
@@ -80,7 +82,7 @@ export default class Server {
 
     //INICIAR EL SERVIDOR
     start( callback: Function ) {
-
+        
         this.httpServer.listen( this.port, callback );
 
     }
