@@ -1,17 +1,23 @@
 import { Router, Request, Response } from 'express';
 
-const router = Router();
+var router = Router();
 
-router.get( '/heroes/id', (req: Request, res: Response) =>{
+router.get( '/', (req: Request, res: Response) =>{
 
-    const id = req.params.id;
 
-    res.json({
+    //RECIBIR DATOS POR PARAMETROS
+    // const id = req.params.id;
+
+    //RECIBIR DATOS POR POST(BODY)
+    // let id = req.body.id;
+
+    // var body = req.body;
+
+    return res.status(200).json({
         ok: true,
-        mensaje: "Todo esta bien",
-        id: id
+        mensaje: "Todo esta bien"
     });
 
 });
 
-export default router;
+export const route_index = router;

@@ -11,9 +11,9 @@ import http from 'http';
 import cors from 'cors';
 //BODY PARSER ( Permite usar envio de formularios en JSON )
 import bodyParser from 'body-parser';
-//PATH
+//PATH (Permite ubicar los directorios de la aplicación)
 import path from 'path';
-//FUNCIONES DE SOCKET
+//FUNCIONES PERSONALIZADAS DE SOCKET
 import * as socketService from '../sockets/sockets'
 
 export default class Server {
@@ -39,7 +39,7 @@ export default class Server {
         //BODY PARSE
         this.bodyParser();
         //INICIAR EL SERVICIO DE SOCKET
-        this.escucharSockets();
+        // this.escucharSockets();
         //CONTENIDO HTML
         this.publicFolder();
     }
